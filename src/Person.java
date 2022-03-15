@@ -17,17 +17,15 @@ public class Person {
     public Person() {
     }
 
-//    public PersonBuilder newChildBuilder(Person person) {
-//
-//        // почему в мэйне это работает, а в этом классе нет? непонимаю
-//
-//        Person personBuilder = new PersonBuilder()
-//                .setAddress(person.getAddress())
-//                .setAge(0)
-//                .setSurname(person.getSurname())
-//                .build();
-//        return personBuilder;
-//    }
+    public Person newChildBuilder(Person person) {
+
+        Person personBuilder = new PersonBuilder()
+                .setAddress(person.getAddress())
+                .setAge(0)
+                .setSurname(person.getSurname())
+                .build();
+        return personBuilder;
+    }
 
     public boolean hasAddress() {
 
@@ -35,9 +33,14 @@ public class Person {
     }
 
     public boolean hasAge() {
-
+        if (true) {
+            System.out.println("Возраст указан корректно");
+        } else {
+            System.out.println("Возраст не указан или указан некорректно!");
+        }
         return (0 <= age & age < 100);
     }
+
 
     public int happyBirthday() {
 

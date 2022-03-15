@@ -18,8 +18,12 @@ public class PersonBuilder {
         return this;
     }
 
-    public PersonBuilder setAge(int age) {
+    public PersonBuilder setAge(int age) throws IllegalArgumentException {
         this.age = age;
+        if (age < 0 || age > 100) {
+            throw new IllegalArgumentException("Неверно указано значение возраста!" + "\n" +
+                    "Возраст может быть от 0 до 100!");
+        }
         return this;
     }
 
