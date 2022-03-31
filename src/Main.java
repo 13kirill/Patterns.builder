@@ -20,8 +20,10 @@ public class Main {
                     .setAge(35)
                     .setAddress("MSK")
                     .build();
-        System.out.println(artem);
 
-        System.out.println(artem.newChildBuilder(artem));
+        Person son = artem.newChildBuilder().setName("Grigory").setAge(6).build();
+        System.out.println(son);
+
+        Person nataly = new PersonBuilder().setAge(-2).build();
     }
 }

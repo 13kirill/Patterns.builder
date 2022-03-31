@@ -17,13 +17,10 @@ public class Person {
     public Person() {
     }
 
-    public Person newChildBuilder(Person person) {
-
-        Person personBuilder = new PersonBuilder()
-                .setAddress(person.getAddress())
-                .setAge(0)
-                .setSurname(person.getSurname())
-                .build();
+    public PersonBuilder newChildBuilder() {
+        PersonBuilder personBuilder = new PersonBuilder();
+        personBuilder.setSurname(this.surname)
+                .setAddress(this.address);
         return personBuilder;
     }
 
